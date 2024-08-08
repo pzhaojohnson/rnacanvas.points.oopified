@@ -44,3 +44,19 @@ var p = Point.matching({ x: 901.7, y: -11 });
 p.x; // 901.7
 p.y; // -11
 ```
+
+### `displacementTo()`
+
+Returns a new `Vector` instance
+that is the vector going from the point that this method is called upon
+to the specified point.
+
+See [`@rnacanvas/vectors.oopified`](https://pzhaojohnson.github.io/rnacanvas.vectors.oopified/) package for documentation on the `Vector` class.
+
+```javascript
+let p = new Point(91, 26);
+let d = p.displacementTo({ x: 81, y: 34 });
+
+d.x; // -10
+d.y; // 8
+```
