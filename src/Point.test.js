@@ -18,4 +18,10 @@ describe('`Point` class', () => {
     p.y = -101.3;
     expect(p.y).toBe(-101.3);
   });
+
+  test('iterability', () => {
+    let p = new Point(82.5, 554.1);
+
+    expect([...p]).toStrictEqual([82.5, 554.1]);
+  });
 });
