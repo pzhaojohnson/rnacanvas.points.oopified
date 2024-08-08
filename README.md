@@ -102,7 +102,7 @@ p.distanceFrom({ x: 75, y: 82 }); // 13
 ### `directionTo()`
 
 Returns the angle (in radians)
-that is the direction from the point to the specified
+that is the direction from the point to the specified point
 in the standard Cartesian coordinate system.
 
 ```javascript
