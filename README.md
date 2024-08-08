@@ -81,7 +81,7 @@ d.y; // -22
 
 ### `distanceTo()`
 
-Returns the distance from a point to a specified point.
+Returns the distance from the point to the specified point.
 
 ```javascript
 var p = new Point(10, 10);
