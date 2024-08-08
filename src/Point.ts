@@ -22,4 +22,11 @@ export class Point {
   displacementTo(p: PointLike): Vector {
     return new Vector(p.x - this.x, p.y - this.y);
   }
+
+  /**
+   * Returns the vector going from the specified point to this point.
+   */
+  displacementFrom(p: PointLike): Vector {
+    return new Vector(this.x - p.x, this.y - p.y);
+  }
 }

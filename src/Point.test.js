@@ -39,4 +39,12 @@ describe('`Point` class', () => {
     expect(d.x).toBeCloseTo((-13) - 25.1);
     expect(d.y).toBeCloseTo(207.2 - 88.9);
   });
+
+  test('`displacementFrom()` method', () => {
+    let p = new Point(129, -84);
+    let d = p.displacementFrom({ x: 101, y: 82 });
+
+    expect(d.x).toBeCloseTo(129 - 101);
+    expect(d.y).toBeCloseTo((-84) - 82);
+  });
 });
