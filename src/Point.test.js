@@ -31,4 +31,12 @@ describe('`Point` class', () => {
 
     expect([...p]).toStrictEqual([82.5, 554.1]);
   });
+
+  test('`displacementTo()` method', () => {
+    let p = new Point(25.1, 88.9);
+    let d = p.displacementTo({ x: -13, y: 207.2 });
+
+    expect(d.x).toBeCloseTo((-13) - 25.1);
+    expect(d.y).toBeCloseTo(207.2 - 88.9);
+  });
 });
