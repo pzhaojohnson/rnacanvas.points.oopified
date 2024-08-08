@@ -48,10 +48,10 @@ p.y; // -11
 ### `displacementTo()`
 
 Returns a new `Vector` instance
-that is the vector going from the point that this method is called upon
+that is the vector going from the point that this method was called upon
 to the specified point.
 
-See [`@rnacanvas/vectors.oopified`](https://pzhaojohnson.github.io/rnacanvas.vectors.oopified/) package for documentation on the `Vector` class.
+See [@rnacanvas/vectors.oopified](https://pzhaojohnson.github.io/rnacanvas.vectors.oopified/) package for documentation on the `Vector` class.
 
 ```javascript
 let p = new Point(91, 26);
