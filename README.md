@@ -48,15 +48,15 @@ p.y; // -11
 ### `displacementTo()`
 
 Returns a new `Vector` instance
-that is the vector going from the point that this method was called on
+that is the vector going from the point
 to the specified point.
 
 See [@rnacanvas/vectors.oopified](https://pzhaojohnson.github.io/rnacanvas.vectors.oopified/) package
 for documentation on the `Vector` class.
 
 ```javascript
-let p = new Point(91, 26);
-let d = p.displacementTo({ x: 81, y: 34 });
+var p = new Point(91, 26);
+var d = p.displacementTo({ x: 81, y: 34 });
 
 d.x; // -10
 d.y; // 8
@@ -72,8 +72,8 @@ See [@rnacanvas/vectors.oopified](https://pzhaojohnson.github.io/rnacanvas.vecto
 for documentation on the `Vector` class.
 
 ```javascript
-let p = new Point(105, 202);
-let d = p.displacementFrom({ x: 5, y: 224 });
+var p = new Point(105, 202);
+var d = p.displacementFrom({ x: 5, y: 224 });
 
 d.x; // 100
 d.y; // -22
@@ -81,7 +81,7 @@ d.y; // -22
 
 ### `distanceTo()`
 
-Returns the distance from the point to the specified point.
+Returns the distance from a point to a specified point.
 
 ```javascript
 var p = new Point(10, 10);
