@@ -35,7 +35,7 @@ p.y = 38.1;
 
 ### `static matching()`
 
-Create a `Point` instance matching a point-like object
+Creates and returns a new `Point` instance matching a point-like object
 (e.g., an object with `x` and `y` properties).
 
 ```javascript
