@@ -98,3 +98,32 @@ var p = new Point(80, 70);
 
 p.distanceFrom({ x: 75, y: 82 }); // 13
 ```
+
+### `directionTo()`
+
+Returns the angle (in radians)
+that is the direction from the point to the specified
+in the standard Cartesian coordinate system.
+
+```javascript
+var p = new Point(0, 0);
+
+p.directionTo({ x: 1, y: 0 }); // 0
+p.directionTo({ x: 0, y: 1 }); // Math.PI / 2
+p.directionTo({ x: -1, y: -1 }); // -3 * Math.PI / 4
+```
+
+### `directionFrom()`
+
+Returns the angle (in radians)
+that is the direction from the specified point
+to the point that this was method was called on
+in the standard Cartesian coordinate system.
+
+```javascript
+var p = new Point(0, 0);
+
+p.directionFrom({ x: 1, y: 0 }); // Math.PI
+p.directionFrom({ x: 0, y: 1 }); // -Math.PI / 2
+p.directionFrom({ x: -1, y: -1 }); // Math.PI / 4
+```
