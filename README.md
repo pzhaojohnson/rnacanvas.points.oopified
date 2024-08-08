@@ -48,7 +48,7 @@ p.y; // -11
 ### `displacementTo()`
 
 Returns a new `Vector` instance
-that is the vector going from the point that this method was called upon
+that is the vector going from the point that this method was called on
 to the specified point.
 
 See [@rnacanvas/vectors.oopified](https://pzhaojohnson.github.io/rnacanvas.vectors.oopified/) package
@@ -66,7 +66,7 @@ d.y; // 8
 
 Returns a new `Vector` instance
 that is the vector going from the specified point
-to the point that this method was called upon.
+to the point that this method was called on.
 
 See [@rnacanvas/vectors.oopified](https://pzhaojohnson.github.io/rnacanvas.vectors.oopified/) package
 for documentation on the `Vector` class.
