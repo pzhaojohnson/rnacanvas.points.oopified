@@ -29,4 +29,18 @@ export class Point {
   displacementFrom(p: PointLike): Vector {
     return new Vector(this.x - p.x, this.y - p.y);
   }
+
+  /**
+   * Returns the distance from this point to the specified point.
+   */
+  distanceTo(p: PointLike): number {
+    return this.displacementTo(p).magnitude;
+  }
+
+  /**
+   * Returns the distance from the specified point to this point.
+   */
+  distanceFrom(p: PointLike): number {
+    return this.distanceTo(p);
+  }
 }

@@ -47,4 +47,16 @@ describe('`Point` class', () => {
     expect(d.x).toBeCloseTo(129 - 101);
     expect(d.y).toBeCloseTo((-84) - 82);
   });
+
+  test('`distanceTo()` method', () => {
+    let p = new Point(5, 27);
+
+    expect(p.distanceTo({ x: 10, y: 15 })).toBeCloseTo(13);
+  });
+
+  test('`distanceFrom()` method', () => {
+    let p = new Point(101, 83);
+
+    expect(p.distanceFrom({ x: 93, y: 98 })).toBeCloseTo(17);
+  });
 });
