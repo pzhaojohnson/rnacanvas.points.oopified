@@ -28,4 +28,7 @@ p.y; // -55.4
 // can be modified
 p.x = 101.2;
 p.y = 38.1;
+
+// are iterable
+[...p]; // [101.2, 38.1]
 ```
