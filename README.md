@@ -51,7 +51,8 @@ Returns a new `Vector` instance
 that is the vector going from the point that this method was called upon
 to the specified point.
 
-See [@rnacanvas/vectors.oopified](https://pzhaojohnson.github.io/rnacanvas.vectors.oopified/) package for documentation on the `Vector` class.
+See [@rnacanvas/vectors.oopified](https://pzhaojohnson.github.io/rnacanvas.vectors.oopified/) package
+for documentation on the `Vector` class.
 
 ```javascript
 let p = new Point(91, 26);
@@ -59,4 +60,21 @@ let d = p.displacementTo({ x: 81, y: 34 });
 
 d.x; // -10
 d.y; // 8
+```
+
+### `displacementFrom()`
+
+Returns a new `Vector` instance
+that is the vector going from the specified point
+to the point that this method was called upon.
+
+See [@rnacanvas/vectors.oopified](https://pzhaojohnson.github.io/rnacanvas.vectors.oopified/) package
+for documentation on the `Vector` class.
+
+```javascript
+let p = new Point(105, 202);
+let d = p.displacementFrom({ x: 5, y: 224 });
+
+d.x; // 100
+d.y; // -22
 ```
