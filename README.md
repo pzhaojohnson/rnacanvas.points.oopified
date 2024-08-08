@@ -21,6 +21,7 @@ The `Point` class represents a 2D point.
 
 ```javascript
 let p = new Point(28.1, -55.4);
+
 p.x; // 28.1
 p.y; // -55.4
 
