@@ -43,4 +43,22 @@ export class Point {
   distanceFrom(p: PointLike): number {
     return this.distanceTo(p);
   }
+
+  /**
+   * Returns the angle (in radians)
+   * that is the direction from this point to the specified point
+   * in the standard Cartesian coordinate system.
+   */
+  directionTo(p: PointLike): number {
+    return this.displacementTo(p).direction;
+  }
+
+  /**
+   * Returns the angle (in radians)
+   * that is the direction from the specified point to this point
+   * in the standard Cartesian coordinate system.
+   */
+  directionFrom(p: PointLike): number {
+    return this.displacementFrom(p).direction;
+  }
 }

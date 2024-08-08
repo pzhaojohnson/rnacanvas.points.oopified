@@ -59,4 +59,22 @@ describe('`Point` class', () => {
 
     expect(p.distanceFrom({ x: 93, y: 98 })).toBeCloseTo(17);
   });
+
+  test('`directionTo()` method', () => {
+    let p = new Point(5, 18);
+
+    let x = 5 - 2;
+    let y = 18 + (2 * Math.sqrt(3));
+
+    expect(p.directionTo({ x, y })).toBeCloseTo(2 * Math.PI / 3);
+  });
+
+  test('`directionFrom` method', () => {
+    let p = new Point(-4, 12);
+
+    let x = (-4) - (7 * Math.sqrt(3));
+    let y = 12 - 7;
+
+    expect(p.directionFrom({ x, y })).toBeCloseTo(Math.PI / 6);
+  });
 });
