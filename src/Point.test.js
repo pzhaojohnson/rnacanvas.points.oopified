@@ -1,6 +1,13 @@
 import { Point } from './Point';
 
 describe('`Point` class', () => {
+  test('`matching()` static method', () => {
+    let p = Point.matching({ x: -12.04, y: 88.23 });
+
+    expect(p.x).toBe(-12.04);
+    expect(p.y).toBe(88.23);
+  });
+
   test('`x` property', () => {
     let p = new Point(25.7, 29);
     expect(p.x).toBe(25.7);
