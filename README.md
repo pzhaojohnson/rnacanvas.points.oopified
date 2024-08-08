@@ -78,3 +78,23 @@ let d = p.displacementFrom({ x: 5, y: 224 });
 d.x; // 100
 d.y; // -22
 ```
+
+### `distanceTo()`
+
+Returns the distance from the point to the specified point.
+
+```javascript
+var p = new Point(10, 10);
+
+p.distanceTo({ x: 13, y: 14 }); // 5
+```
+
+### `distanceFrom()`
+
+An alias for the `distanceTo()` method.
+
+```javascript
+var p = new Point(80, 70);
+
+p.distanceFrom({ x: 75, y: 82 }); // 13
+```
