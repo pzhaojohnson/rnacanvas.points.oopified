@@ -32,3 +32,15 @@ p.y = 38.1;
 // is iterable
 [...p]; // [101.2, 38.1]
 ```
+
+### `static matching()`
+
+Create a `Point` instance matching a point-like object
+(e.g., an object with `x` and `y` properties).
+
+```javascript
+var p = Point.matching({ x: 901.7, y: -11 });
+
+p.x; // 901.7
+p.y; // -11
+```
