@@ -75,11 +75,14 @@ See [@rnacanvas/vectors.oopified](https://pzhaojohnson.github.io/rnacanvas.vecto
 for documentation on the `Vector` class.
 
 ```javascript
-var p = new Point(105, 202);
-var d = p.displacementFrom({ x: 5, y: 224 });
+var p = new Point(0, 0);
+var d = p.displacementFrom({ x: 1, y: Math.sqrt(3) });
 
-d.x; // 100
-d.y; // -22
+d.x; // -1
+d.y; // -Math.sqrt(3)
+
+d.magnitude; // 2
+d.direction; // -2 * Math.PI / 3
 ```
 
 ### `distanceTo()`
