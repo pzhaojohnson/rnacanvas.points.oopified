@@ -150,8 +150,8 @@ refP.y = -81;
 relP.x; // 57
 relP.y; // -81
 
-relP.x = 57 + 12;
-relP.y = -81 - 15;
+relP.x += 12;
+relP.y -= 15;
 
 refP.x = 102;
 refP.y = 3;
