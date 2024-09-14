@@ -167,10 +167,8 @@ interface TrackablePoint {
   readonly x: number;
   readonly y: number;
 
-  /**
-   * The listener is to be called whenever the point moves
-   * (i.e., whenever its X or Y coordinates change).
-   */
+  // the listener is to be called whenever the point moves
+  // (i.e., whenever its X or Y coordinates change)
   addEventListener(name: 'move', listener: () => void): void;
 }
 ```
