@@ -133,3 +133,28 @@ p.directionFrom({ x: 1, y: 0 }); // Math.PI
 p.directionFrom({ x: 0, y: 1 }); // -Math.PI / 2
 p.directionFrom({ x: -1, y: -1 }); // Math.PI / 4
 ```
+
+## `RelativePoint`
+
+A point expressed relative to a reference point.
+
+```javascript
+var refP; // reference point
+var relP = new RelativePoint(refP);
+
+refP.x = 57;
+refP.y = -81;
+
+// moves with the reference point
+relP.x; // 57
+relP.y; // -81
+
+relP.x = 57 + 12;
+relP.y = -81 - 15;
+
+refP.x = 102;
+refP.y = 3;
+
+relP.x; // 102 + 12
+relP.y; // 3 - 15
+```
