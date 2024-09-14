@@ -136,7 +136,8 @@ p.directionFrom({ x: -1, y: -1 }); // Math.PI / 4
 
 ## `RelativePoint`
 
-A point expressed relative to a reference point.
+The `RelativePoint` class
+represents a point that is expressed relative to a reference point.
 
 ```javascript
 var refP; // reference point
@@ -157,4 +158,19 @@ refP.y = 3;
 
 relP.x; // 102 + 12
 relP.y; // 3 - 15
+```
+
+The reference point must fulfill the `TrackablePoint` interface below.
+
+```typescript
+interface TrackablePoint {
+  readonly x: number;
+  readonly y: number;
+
+  /**
+   * The listener is to be called whenever the point moves
+   * (i.e., whenever its X or Y coordinates change).
+   */
+  addEventListener(name: 'move', listener: () => void): void;
+}
 ```
