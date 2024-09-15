@@ -172,3 +172,29 @@ interface TrackablePoint {
   addEventListener(name: 'move', listener: () => void): void;
 }
 ```
+
+### Listening for move events
+
+Listeners can be attached
+that will be called whenever a relative point moves
+(i.e., whenever the reference point moves
+or its displacement from the reference point changes).
+
+```javascript
+var refP; // reference point
+var relP = new RelativePoint(refP);
+
+var listener = () => {};
+relP.addEventListener('move', listener);
+
+refP.x += 1000;
+listener; // called once
+
+relP.x -= 12;
+listener; // called a second time
+
+relP.removeEventListener('move', listener);
+
+relP.x += 20;
+listener; // not called a third time
+```
