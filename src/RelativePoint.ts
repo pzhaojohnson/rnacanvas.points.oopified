@@ -10,8 +10,14 @@ export class RelativePoint {
 
   #displacement = new Vector(0, 0);
 
+  #eventListeners: EventListeners = {
+    'move': [],
+  };
+
   constructor(referencePoint: TrackablePoint) {
     this.#referencePoint = referencePoint;
+
+    referencePoint.addEventListener('move', () => this.#callEventListeners('move'));
   }
 
   get x(): number {
@@ -20,6 +26,8 @@ export class RelativePoint {
 
   set x(x) {
     this.#displacement.x = x - this.#referencePoint.x;
+
+    this.#callEventListeners('move');
   }
 
   get y(): number {
@@ -28,8 +36,28 @@ export class RelativePoint {
 
   set y(y) {
     this.#displacement.y = y - this.#referencePoint.y;
+
+    this.#callEventListeners('move');
+  }
+
+  addEventListener(name: 'move', listener: EventListener): void {
+    this.#eventListeners[name].push(listener);
+  }
+
+  removeEventListener(name: 'move', listener: EventListener): void {
+    this.#eventListeners[name] = this.#eventListeners[name].filter(li => li !== listener);
+  }
+
+  #callEventListeners(name: 'move'): void {
+    this.#eventListeners[name].forEach(listener => listener());
   }
 }
+
+type EventListener = () => void;
+
+interface EventListeners {
+  'move': EventListener[];
+};
 
 interface TrackablePoint {
   readonly x: number;
@@ -39,5 +67,5 @@ interface TrackablePoint {
    * The listener is to be called whenever the point moves
    * (i.e., its X or Y coordinates change).
    */
-  addEventListener(name: 'move', listener: () => void): void;
+  addEventListener(name: 'move', listener: EventListener): void;
 }

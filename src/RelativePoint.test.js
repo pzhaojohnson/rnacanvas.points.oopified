@@ -60,8 +60,15 @@ describe('`RelativePoint` class', () => {
     let relativePoint = new RelativePoint(referencePoint);
     expect(relativePoint.x).toBeCloseTo(20);
 
+    let listeners = [jest.fn(), jest.fn(), jest.fn()];
+    listeners.forEach(li => relativePoint.addEventListener('move', li));
+
+    listeners.forEach(li => expect(li).not.toHaveBeenCalled());
+
     relativePoint.x = 84;
     expect(relativePoint.x).toBeCloseTo(84);
+
+    listeners.forEach(li => expect(li).toHaveBeenCalledTimes(1));
   });
 
   test('`y` property', () => {
@@ -70,7 +77,48 @@ describe('`RelativePoint` class', () => {
     let relativePoint = new RelativePoint(referencePoint);
     expect(relativePoint.y).toBeCloseTo(1004);
 
+    let listeners = [jest.fn(), jest.fn(), jest.fn()];
+    listeners.forEach(li => relativePoint.addEventListener('move', li));
+
+    listeners.forEach(li => expect(li).not.toHaveBeenCalled());
+
     relativePoint.y = -282;
     expect(relativePoint.y).toBeCloseTo(-282);
+
+    listeners.forEach(li => expect(li).toHaveBeenCalledTimes(1));
+  });
+
+  it('calls movement listeners when the reference point moves', () => {
+    let referencePoint = new TrackablePoint(90, 100);
+
+    let relativePoint = new RelativePoint(referencePoint);
+
+    let listeners = [jest.fn(), jest.fn(), jest.fn()];
+    listeners.forEach(li => relativePoint.addEventListener('move', li));
+
+    listeners.forEach(li => expect(li).not.toHaveBeenCalled());
+
+    referencePoint.x = -84;
+    listeners.forEach(li => expect(li).toHaveBeenCalledTimes(1));
+
+    referencePoint.y = 103;
+    listeners.forEach(li => expect(li).toHaveBeenCalledTimes(2));
+  });
+
+  test('removing event listeners', () => {
+    let referencePoint = new TrackablePoint(1, 2);
+
+    let relativePoint = new RelativePoint(referencePoint);
+
+    let listeners = [jest.fn(), jest.fn(), jest.fn()];
+    listeners.forEach(li => relativePoint.addEventListener('move', li));
+
+    relativePoint.y = 5;
+    listeners.forEach(li => expect(li).toHaveBeenCalledTimes(1));
+
+    listeners.forEach(li => relativePoint.removeEventListener('move', li));
+
+    relativePoint.y = 6;
+    listeners.forEach(li => expect(li).toHaveBeenCalledTimes(1));
   });
 });
