@@ -32,6 +32,20 @@ describe('`Point` class', () => {
     expect([...p]).toStrictEqual([82.5, 554.1]);
   });
 
+  test('`displace()`', () => {
+    var p = new Point(25, -17);
+
+    p.displace({ x: -3, y: 28 });
+
+    expect(p.x).toBeCloseTo(22);
+    expect(p.y).toBeCloseTo(11);
+
+    p.displace({ magnitude: 10, direction: Math.PI / 3 });
+
+    expect(p.x).toBeCloseTo(27);
+    expect(p.y).toBeCloseTo(11 + ((10 / 2) * 3**0.5));
+  });
+
   test('`displacementTo()` method', () => {
     let p = new Point(25.1, 88.9);
     let d = p.displacementTo({ x: -13, y: 207.2 });

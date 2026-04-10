@@ -1,5 +1,7 @@
 import { Vector } from '@rnacanvas/vectors.oopified';
 
+import type { VectorLike } from '@rnacanvas/vectors.oopified';
+
 type PointLike = {
   x: number;
   y: number;
@@ -14,6 +16,18 @@ export class Point {
 
   [Symbol.iterator]() {
     return [this.x, this.y].values();
+  }
+
+  /**
+   * Displace the point by a vector.
+   *
+   * Modifies the point (without returning a new point).
+   */
+  displace(vector: VectorLike): void {
+    let v = Vector.matching(vector);
+
+    this.x += v.x;
+    this.y += v.y;
   }
 
   /**
