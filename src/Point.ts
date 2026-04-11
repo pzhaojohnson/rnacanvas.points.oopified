@@ -31,6 +31,19 @@ export class Point {
   }
 
   /**
+   * Creates and returns a new point that is the current point displaced by the specified vector.
+   *
+   * Does not modify the current point.
+   */
+  displaced(vector: VectorLike): Point {
+    let p = Point.matching(this);
+
+    p.displace(vector);
+
+    return p;
+  }
+
+  /**
    * Returns the vector going from this point to the specified point.
    */
   displacementTo(p: PointLike): Vector {

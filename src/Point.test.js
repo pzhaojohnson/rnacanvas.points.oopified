@@ -46,6 +46,20 @@ describe('`Point` class', () => {
     expect(p.y).toBeCloseTo(11 + ((10 / 2) * 3**0.5));
   });
 
+  test('`displaced()`', () => {
+    var p1 = new Point(5, 10);
+
+    var p2 = p1.displaced({ x: -2, y: 22 });
+
+    expect(p2.x).toBeCloseTo(3);
+    expect(p2.y).toBeCloseTo(32);
+
+    var p3 = p1.displaced({ magnitude: 2, direction: -Math.PI / 3 });
+
+    expect(p3.x).toBeCloseTo(6);
+    expect(p3.y).toBeCloseTo(10 - 3**0.5);
+  });
+
   test('`displacementTo()` method', () => {
     let p = new Point(25.1, 88.9);
     let d = p.displacementTo({ x: -13, y: 207.2 });
