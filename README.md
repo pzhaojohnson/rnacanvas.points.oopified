@@ -45,6 +45,27 @@ p.x; // 901.7
 p.y; // -11
 ```
 
+### `displace()`
+
+Displace a point by a vector.
+
+Modifies the point itself (does not return a new point).
+
+```javascript
+var p = new Point(10, 20);
+
+p.displace({ x: 5, y: -30 });
+
+p.x; // 15
+p.y; // -10
+
+// vectors can also be specified in terms of magnitude and direction
+p.displace({ magnitude: 2, direction: Math.PI / 3 });
+
+p.x; // 15 + 1
+p.y; // -10 + 3**0.5
+```
+
 ### `displacementTo()`
 
 Returns a new `Vector` instance
