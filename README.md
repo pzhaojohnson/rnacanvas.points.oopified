@@ -82,8 +82,8 @@ p2.x; // 15
 p2.y; // -10
 
 // unchanged
-p1.x; // 5
-p1.y; // -30
+p1.x; // 10
+p1.y; // 20
 
 // vectors can also be specified in terms of magnitude and direction
 var p3 = p1.displaced({ magnitude: 2, direction: Math.PI / 3 });
