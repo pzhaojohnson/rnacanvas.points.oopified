@@ -66,6 +66,32 @@ p.x; // 15 + 1
 p.y; // -10 + 3**0.5
 ```
 
+### `displaced()`
+
+Similar to the `displace()` method but creates and returns a new point
+that is the current point displaced by the specified vector.
+
+Does not modify the current point.
+
+```javascript
+var p1 = new Point(10, 20);
+
+var p2 = p1.displaced({ x: 5, y: -30 });
+
+p2.x; // 15
+p2.y; // -10
+
+// unchanged
+p1.x; // 5
+p1.y; // -30
+
+// vectors can also be specified in terms of magnitude and direction
+var p3 = p1.displaced({ magnitude: 2, direction: Math.PI / 3 });
+
+p3.x; // 10 + 1
+p3.y; // 20 + 3**0.5
+```
+
 ### `displacementTo()`
 
 Returns a new `Vector` instance
