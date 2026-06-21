@@ -45,6 +45,34 @@ p.x; // 901.7
 p.y; // -11
 ```
 
+### `set()`
+
+Sets the X and/or Y coordinates of a point.
+
+```javascript
+var p = new Point(0, 0);
+
+p.set({ x: 10, y: 20 });
+
+p.x; // 10
+p.y; // 20
+
+// coordinates can be set one at a time
+p.set({ x: 100 });
+p.set({ y: 200 });
+
+p.x; // 100
+p.y; // 200
+
+// all arguments are optional
+p.set({});
+p.set();
+
+// unchanged
+p.x; // 100
+p.y; // 200
+```
+
 ### `displace()`
 
 Displace a point by a vector.
