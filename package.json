@@ -1,6 +1,6 @@
 {
   "name": "@rnacanvas/points.oopified",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Work with 2D points in an object-oriented way",
   "repository": {
     "type": "git",
@@ -14,9 +14,9 @@
   "author": "pzhaojohnson",
   "license": "GPL-3.0-only",
   "devDependencies": {
-    "@babel/core": "^8.0.1",
-    "@babel/preset-env": "^8.0.2",
-    "@babel/preset-typescript": "^8.0.1",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
     "babel-jest": "^30.3.0",
     "jest": "^30.3.0",
     "ts-loader": "^9.5.1",
@@ -25,6 +25,7 @@
     "webpack-cli": "^7.0.2"
   },
   "dependencies": {
+    "@rnacanvas/math": "^1.20.1",
     "@rnacanvas/value-check": "^2.7.0",
     "@rnacanvas/vectors.oopified": "^2.1.1"
   }
