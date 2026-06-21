@@ -1,11 +1,8 @@
+import type { PointLike } from './PointLike';
+
 import { Vector } from '@rnacanvas/vectors.oopified';
 
 import type { VectorLike } from '@rnacanvas/vectors.oopified';
-
-type PointLike = {
-  x: number;
-  y: number;
-};
 
 export class Point {
   static matching(p: PointLike): Point {
