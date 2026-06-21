@@ -181,6 +181,39 @@ p.directionFrom({ x: 0, y: 1 }); // -Math.PI / 2
 p.directionFrom({ x: -1, y: -1 }); // Math.PI / 4
 ```
 
+## `class FinitePoint`
+
+A point whose construction will throw an error
+if its X and Y coordinates aren't finite numbers.
+
+```javascript
+var p = new FiniteNumber(10, 20);
+
+// works fine
+p.x; // 10
+p.y; // 20
+
+new FiniteNumber(NaN, 20); // throws
+new FiniteNumber(10, Infinity); // throws
+```
+
+### `static matching()`
+
+Creates a finite point object with X and Y coordinates matching those of the input point-like object.
+
+Throws if either X or Y coordinates aren't finite numbers.
+
+```javascript
+var p = FiniteNumber.matching({ x: 10, y: 20 });
+
+// works fine
+p.x; // 10
+p.y; // 20
+
+FiniteNumber.matching({ x: NaN, y: 20 }); // throws
+FiniteNumber.matching({ x: 10, y: Infinity }); // throws
+```
+
 ## `RelativePoint`
 
 The `RelativePoint` class
