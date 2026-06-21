@@ -32,6 +32,40 @@ describe('`Point` class', () => {
     expect([...p]).toStrictEqual([82.5, 554.1]);
   });
 
+  test('`set()`', () => {
+    var p = new Point(0, 1);
+
+    // setting both X and Y coordinates
+    p.set({ x: 10, y: 20 });
+
+    expect(p.x).toBe(10);
+    expect(p.y).toBe(20);
+
+    // setting just the X coordinate
+    p.set({ x: -10 });
+
+    expect(p.x).toBe(-10);
+    expect(p.y).toBe(20);
+
+    // setting just the Y coordinate
+    p.set({ y: 90 });
+
+    expect(p.x).toBe(-10);
+    expect(p.y).toBe(90);
+
+    // setting no coordinates
+    p.set({});
+
+    expect(p.x).toBe(-10);
+    expect(p.y).toBe(90);
+
+    // calling without any input argument
+    p.set();
+
+    expect(p.x).toBe(-10);
+    expect(p.y).toBe(90);
+  });
+
   test('`displace()`', () => {
     var p = new Point(25, -17);
 

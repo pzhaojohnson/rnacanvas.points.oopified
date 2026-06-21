@@ -4,6 +4,8 @@ import { Vector } from '@rnacanvas/vectors.oopified';
 
 import type { VectorLike } from '@rnacanvas/vectors.oopified';
 
+import { isNumber } from '@rnacanvas/value-check';
+
 export class Point {
   static matching(p: PointLike): Point {
     return new Point(p.x, p.y);
@@ -13,6 +15,16 @@ export class Point {
 
   [Symbol.iterator]() {
     return [this.x, this.y].values();
+  }
+
+  set(values?: { x?: number, y?: number }): void {
+    if (isNumber(values?.x)) {
+      this.x = values.x;
+    }
+
+    if (isNumber(values?.y)) {
+      this.y = values.y;
+    }
   }
 
   /**
