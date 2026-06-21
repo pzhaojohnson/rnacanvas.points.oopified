@@ -298,7 +298,7 @@ mp.y; // 10
 
 mp instanceof Point; // true
 
-// can also be called on point instances
+// can also be called on `Point` instances
 var mp = midpoint({ x: 0, y: 0 }, new Point(10, 20));
 
 mp.x; // 5
