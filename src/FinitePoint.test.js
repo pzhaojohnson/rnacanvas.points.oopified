@@ -32,4 +32,26 @@ describe('`class FinitePoint`', () => {
       expect(() => new FinitePoint(0, 0)).not.toThrow();
     });
   });
+
+  test('`set()`', () => {
+    var p = new FinitePoint(0, 0);
+
+    p.set({ x: 10, y: 20 });
+
+    // sets X and Y coordinates
+    expect(p.x).toBe(10);
+    expect(p.y).toBe(20);
+
+    var p = new FinitePoint(-10, 80);
+
+    // throws for nonfinite X and Y coordinates
+    [NaN, Infinity, -Infinity].forEach(value => {
+      expect(() => p.set({ x: value })).toThrow();
+      expect(() => p.set({ y: value })).toThrow();
+
+      // the point should remain unchanged
+      expect(p.x).toBe(-10);
+      expect(p.y).toBe(80);
+    });
+  });
 });
