@@ -284,3 +284,23 @@ relP.removeEventListener('move', listener);
 relP.x += 20;
 listener; // not called a third time
 ```
+
+## `function midpoint()`
+
+Calculates the average of two points
+(and returns the result as a `Point` instance).
+
+```javascript
+var mp = midpoint({ x: 0, y: 0 }, { x: 10, y: 20 });
+
+mp.x; // 5
+mp.y; // 10
+
+mp instanceof Point; // true
+
+// can also be called on point instances
+var mp = midpoint({ x: 0, y: 0 }, new Point(10, 20));
+
+mp.x; // 5
+mp.y; // 10
+```
