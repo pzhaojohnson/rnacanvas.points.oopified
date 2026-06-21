@@ -213,7 +213,7 @@ p.y; // 20
 FiniteNumber.matching({ x: NaN, y: 20 }); // throws
 FiniteNumber.matching({ x: 10, y: Infinity }); // throws
 
-// this allowed
+// this is allowed
 var p = new Point(NaN, 0);
 
 // but this will throw
