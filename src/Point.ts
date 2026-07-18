@@ -104,4 +104,11 @@ export class Point {
   directionFrom(p: PointLike): number {
     return this.displacementFrom(p).direction;
   }
+
+  /**
+   * Creates and returns a deep copy of the point.
+   */
+  deepCopy(): Point {
+    return new Point(this.x, this.y);
+  }
 }

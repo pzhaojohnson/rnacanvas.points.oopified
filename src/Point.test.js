@@ -148,4 +148,15 @@ describe('`Point` class', () => {
 
     expect(p.directionFrom({ x, y })).toBeCloseTo(Math.PI / 6);
   });
+
+  test('`deepCopy()`', () => {
+    var p1 = new Point(57, -102.9);
+
+    var p2 = p1.deepCopy();
+
+    expect(p2.x).toBe(57);
+    expect(p2.y).toBe(-102.9);
+
+    expect(p2).not.toBe(p1);
+  });
 });

@@ -1,6 +1,6 @@
 {
   "name": "@rnacanvas/points.oopified",
-  "version": "2.7.1",
+  "version": "2.8.0",
   "description": "Work with 2D points in an object-oriented way",
   "repository": {
     "type": "git",
