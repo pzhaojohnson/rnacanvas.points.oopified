@@ -66,6 +66,15 @@ describe('`Point` class', () => {
     expect(p.y).toBe(90);
   });
 
+  test('`drag()`', () => {
+    var p = new Point(2, -7);
+
+    p.drag(-10, 25);
+
+    expect(p.x).toBeCloseTo(-8);
+    expect(p.y).toBeCloseTo(18);
+  });
+
   test('`displace()`', () => {
     var p = new Point(25, -17);
 

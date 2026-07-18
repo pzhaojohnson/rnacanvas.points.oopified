@@ -28,6 +28,13 @@ export class Point {
   }
 
   /**
+   * Moves the point (in place) by the specified X and Y components.
+   */
+  drag(x: number, y: number): void {
+    this.displace({ x, y });
+  }
+
+  /**
    * Displace the point by a vector.
    *
    * Modifies the point (without returning a new point).
