@@ -73,6 +73,19 @@ p.x; // 100
 p.y; // 200
 ```
 
+### `drag()`
+
+Moves the point (i.e., edits the point in-place) by the specified X and Y components.
+
+```javascript
+var p = new Point(10, 20);
+
+p.drag(5, -100);
+
+p.x; // 15
+p.y; // -80
+```
+
 ### `displace()`
 
 Displace a point by a vector.
