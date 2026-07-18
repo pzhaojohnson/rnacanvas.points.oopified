@@ -222,6 +222,21 @@ p.directionFrom({ x: 0, y: 1 }); // -Math.PI / 2
 p.directionFrom({ x: -1, y: -1 }); // Math.PI / 4
 ```
 
+### `deepCopy()`
+
+Creates and returns a deep copy of a point.
+
+```javascript
+var p1 = new Point(10, 20);
+
+var p2 = p1.deepCopy();
+
+p2.x; // 10
+p2.y; // 20
+
+p1 === p2; // false
+```
+
 ## `class FinitePoint`
 
 A point whose construction will throw an error
